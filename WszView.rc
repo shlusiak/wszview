@@ -1,0 +1,317 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+101 DIALOG DISCARDABLE  10, 25, 162, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WszView"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",2,52,85,58,15
+    CTEXT           "Version 1.0\n\nWritten by Sascha Hlusiak, 2001.",-1,5,
+                    30,150,25,SS_SUNKEN
+    LTEXT           "Homepage: http://members.tripod.de/DrAlgebra",-1,5,60,
+                    152,8
+    LTEXT           "Email: Dr.Algebra@gmx.de",-1,38,70,85,8
+    ICON            100,-1,5,5,21,20
+    LTEXT           "WszView",-1,65,10,30,8
+    CONTROL         "",-1,"Static",SS_ETCHEDFRAME,5,105,150,40
+    CTEXT           "This program is freeware and can be copied by everybody for free, but don't modify it!\nFor commercial use, please ask me first!\nThank you!",
+                    -1,10,110,140,32
+    ICON            101,-1,135,5,21,20
+END
+
+IDD_EXPLORER DIALOGEX 0, 0, 534, 388
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Skin-Explorer"
+MENU IDR_MENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_SPLITTER,"MYSPLITTER",WS_TABSTOP,213,7,11,194
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    TVS_INFOTIP | TVS_FULLROWSELECT | WS_TABSTOP,0,0,170,230,
+                    WS_EX_STATICEDGE
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_SINGLESEL | 
+                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_TABSTOP,229,0,
+                    218,230,WS_EX_STATICEDGE
+END
+
+IDD_USERSIZE DIALOG DISCARDABLE  100, 80, 162, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "User Defined Skin Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,30,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,50,50,14
+    CONTROL         "Keep Skin-&Relation",IDC_RELATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,10,77,10
+    LTEXT           "Width:",IDC_STATIC,10,40,22,8
+    LTEXT           "Height:",IDC_STATIC,10,60,24,8
+    EDITTEXT        IDC_EDITX,45,35,45,14,ES_RIGHT | ES_NUMBER
+    EDITTEXT        IDC_EDITY,45,55,45,14,ES_RIGHT | ES_NUMBER
+    GROUPBOX        "&Pixel:",IDC_STATIC,5,25,95,50
+    GROUPBOX        "Per&cent:",IDC_STATIC,5,80,95,50
+    LTEXT           "Width:",IDC_STATIC,10,95,22,8
+    LTEXT           "Height:",IDC_STATIC,10,115,24,8
+    EDITTEXT        IDC_EDITPX,45,90,45,14,ES_RIGHT | ES_NUMBER
+    EDITTEXT        IDC_EDITPY,45,110,45,14,ES_RIGHT | ES_NUMBER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POPUPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Program"
+    BEGIN
+        MENUITEM "&Load skin...\tCtrl+O",       102
+        MENUITEM "&Reload current skin\tF5",    101
+        MENUITEM SEPARATOR
+        MENUITEM "&Save as bitmap...\tCtrl+S",  103
+        MENUITEM SEPARATOR
+        MENUITEM "Select Skin in Winamp\tCtrl+W", 105
+        MENUITEM "&Delete Skin...\tDelete",     106
+        MENUITEM SEPARATOR
+        MENUITEM "Ab&out WszView...",           104
+        MENUITEM "&Exit\tAlt+F4",               100
+    END
+END
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Program"
+    BEGIN
+        MENUITEM "E&xit",                       IDCANCEL
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Skin &Size"
+        BEGIN
+            MENUITEM "&100 %",                      ID_VIEW_IMAGESIZE_100
+            MENUITEM "50 %",                        ID_VIEW_IMAGESIZE_50
+            MENUITEM "25 %",                        ID_VIEW_IMAGESIZE_25
+            , CHECKED
+            MENUITEM "20 %",                        ID_VIEW_IMAGESIZE_20
+            MENUITEM "10 %",                        ID_VIEW_IMAGESIZE_10
+            MENUITEM SEPARATOR
+            MENUITEM "User &Defined...",            ID_VIEW_SKINSIZE_USERDEFINED
+
+        END
+        POPUP "&Colors"
+        BEGIN
+            MENUITEM "4 Bit (16 Colors)",           ID_VIEW_COLORS_4
+            MENUITEM "8 Bit (256 Colors)",          ID_VIEW_COLORS_8
+            MENUITEM "16 Bit (65536 Colors)",       ID_VIEW_COLORS_16
+            MENUITEM "24 Bit (16777216 Colors)",    ID_VIEW_COLORS_24
+            MENUITEM "32 Bit (4294967296 Colors)",  ID_VIEW_COLORS_32
+        END
+        MENUITEM "Show Skins &Only",            ID_VIEW_SHOWSKINSONLY
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Inf&o...",                    102
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+100 ACCELERATORS DISCARDABLE 
+BEGIN
+    "D",            106,                    VIRTKEY, CONTROL, NOINVERT
+    "O",            102,                    VIRTKEY, CONTROL, NOINVERT
+    "S",            103,                    VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      106,                    VIRTKEY, NOINVERT
+    VK_DELETE,      106,                    VIRTKEY, SHIFT, NOINVERT
+    VK_ESCAPE,      100,                    VIRTKEY, NOINVERT
+    VK_F5,          101,                    VIRTKEY, NOINVERT
+    "W",            105,                    VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+100                     ICON    DISCARDABLE     "mainicon.ico"
+101                     ICON    DISCARDABLE     "s.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    101, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 145
+    END
+
+    IDD_EXPLORER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 527
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 381
+    END
+
+    IDD_USERSIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1 24 MOVEABLE PURE 
+BEGIN
+    0x3f3c, 0x6d78, 0x206c, 0x6576, 0x7372, 0x6f69, 0x3d6e, 0x3122, 0x302e, 
+    0x2022, 0x6e65, 0x6f63, 0x6964, 0x676e, 0x223d, 0x5455, 0x2d46, 0x2238, 
+    0x7320, 0x6174, 0x646e, 0x6c61, 0x6e6f, 0x3d65, 0x7922, 0x7365, 0x3f22, 
+    0x3c3e, 0x7361, 0x6573, 0x626d, 0x796c, 0x7820, 0x6c6d, 0x736e, 0x223d, 
+    0x7275, 0x3a6e, 0x6373, 0x6568, 0x616d, 0x2d73, 0x696d, 0x7263, 0x736f, 
+    0x666f, 0x2d74, 0x6f63, 0x3a6d, 0x7361, 0x2e6d, 0x3176, 0x2022, 0x616d, 
+    0x696e, 0x6566, 0x7473, 0x6556, 0x7372, 0x6f69, 0x3d6e, 0x3122, 0x302e, 
+    0x3e22, 0x613c, 0x7373, 0x6d65, 0x6c62, 0x4979, 0x6564, 0x746e, 0x7469, 
+    0x2079, 0x6576, 0x7372, 0x6f69, 0x3d6e, 0x3122, 0x302e, 0x302e, 0x302e, 
+    0x2022, 0x7270, 0x636f, 0x7365, 0x6f73, 0x4172, 0x6372, 0x6968, 0x6574, 
+    0x7463, 0x7275, 0x3d65, 0x5822, 0x3638, 0x2022, 0x616e, 0x656d, 0x223d, 
+    0x6f43, 0x706d, 0x6e61, 0x4e79, 0x6d61, 0x2e65, 0x7250, 0x646f, 0x6375, 
+    0x4e74, 0x6d61, 0x2e65, 0x6f59, 0x7275, 0x7041, 0x2270, 0x7420, 0x7079, 
+    0x3d65, 0x7722, 0x6e69, 0x3233, 0x2022, 0x3e2f, 0x643c, 0x7365, 0x7263, 
+    0x7069, 0x6974, 0x6e6f, 0x593e, 0x756f, 0x2072, 0x7061, 0x6c70, 0x6369, 
+    0x7461, 0x6f69, 0x206e, 0x6564, 0x6373, 0x6972, 0x7470, 0x6f69, 0x206e, 
+    0x6568, 0x6572, 0x3c2e, 0x642f, 0x7365, 0x7263, 0x7069, 0x6974, 0x6e6f, 
+    0x3c3e, 0x6564, 0x6570, 0x646e, 0x6e65, 0x7963, 0x3c3e, 0x6564, 0x6570, 
+    0x646e, 0x6e65, 0x4174, 0x7373, 0x6d65, 0x6c62, 0x3e79, 0x613c, 0x7373, 
+    0x6d65, 0x6c62, 0x4979, 0x6564, 0x746e, 0x7469, 0x2079, 0x7974, 0x6570, 
+    0x223d, 0x6977, 0x336e, 0x2232, 0x6e20, 0x6d61, 0x3d65, 0x4d22, 0x6369, 
+    0x6f72, 0x6f73, 0x7466, 0x572e, 0x6e69, 0x6f64, 0x7377, 0x432e, 0x6d6f, 
+    0x6f6d, 0x2d6e, 0x6f43, 0x746e, 0x6f72, 0x736c, 0x2022, 0x6576, 0x7372, 
+    0x6f69, 0x3d6e, 0x3622, 0x302e, 0x302e, 0x302e, 0x2022, 0x7270, 0x636f, 
+    0x7365, 0x6f73, 0x4172, 0x6372, 0x6968, 0x6574, 0x7463, 0x7275, 0x3d65, 
+    0x5822, 0x3638, 0x2022, 0x7570, 0x6c62, 0x6369, 0x654b, 0x5479, 0x6b6f, 
+    0x6e65, 0x223d, 0x3536, 0x3539, 0x3662, 0x3134, 0x3434, 0x6363, 0x3166, 
+    0x6664, 0x2022, 0x616c, 0x676e, 0x6175, 0x6567, 0x223d, 0x222a, 0x2f20, 
+    0x3c3e, 0x642f, 0x7065, 0x6e65, 0x6564, 0x746e, 0x7341, 0x6573, 0x626d, 
+    0x796c, 0x3c3e, 0x642f, 0x7065, 0x6e65, 0x6564, 0x636e, 0x3e79, 0x2f3c, 
+    0x7361, 0x6573, 0x626d, 0x796c, "\076" 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CANTREMOVEDIR       "Unable to remove temporary directory!\n(%s)"
+    IDS_NOWSZSKIN           "Sorry, the skin is no WSZ-File! Please install it by hand!"
+    IDS_ERRORWSZ            "Error executing wsz file (Winamp not found?)!"
+    IDS_OUTOFMEMORY         "Can't add icon to imagelist.\nListing aborted.\n(Errorcode: #%d)"
+    IDS_ERROR               "WszView - Error"
+    IDS_WANOTRUNNING        "Winamp is not running. Please start if first."
+    IDS_WANOTRUNNING_CAPTION "WA is not running"
+    IDS_CANTEXECUTEFILE     "Can't execute file."
+    IDS_UNFAVOURABLE        "Unfavourable file extension"
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
